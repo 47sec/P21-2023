@@ -1,9 +1,0 @@
-This sas our first file
-#include<iostream>
-
-
-Int main()
-{
-
-Return 0;
-}
