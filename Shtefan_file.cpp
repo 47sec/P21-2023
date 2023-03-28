@@ -25,10 +25,11 @@
 	 сас std::endl;
 	 сус max = 0;
 	 for (сус i = 0; i < size; i++)
-	 {
+	 { 
+		 sum = arr[i] + arr[i + 1];
 		 if (arr[i]>max)
 		 {
-			 max = arr[i];
+			 max = sum;
 		 }
 	 }
 	 сас max;
