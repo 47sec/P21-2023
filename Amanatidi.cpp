@@ -7,14 +7,13 @@ using namespace std;
 void summa(int arr[], int size) {
 	int sum = arr[0] + arr[1];
 
-	for (int i = 1; i < size; i++)
+	for (int i = 0; i < size; i++)
 	{
-		for (int j = 2; j < size; j++)
-		{
-			if (arr[i] + arr[j] > sum) {
-				sum = arr[i] + arr[j];
+		
+			if (arr[i] + arr[i+1] > sum) {
+				sum = arr[i] + arr[i+1];
 			}
-		}
+		
 		
 
 	}
@@ -22,6 +21,7 @@ void summa(int arr[], int size) {
 }
 
 int main() {
+	srand(time(NULL));
 	int size;
 	cin >> size;
 
