@@ -61,13 +61,22 @@ int main() {
             if (choice == 3) break;
         }
     }
-    switch (choice)
+    if (choice == 1 && kye == 13)choose = 1;
+    if (choice == 2 && kye == 13)choose = 2;
+    if (choice == 3 && kye == 13)choose = 3;
+  
+    switch (choose)
     {
-    case 1:{
+    case 1: {
+        std::cout << "let's play";
         break;
     }
     case 2: {
-        std::cout << "hi";
+        std::cout << "ПрИВ";
+        break;
+    }
+    case 3: {
+        std::cout << "Пока!";
         break;
     }
     default:
