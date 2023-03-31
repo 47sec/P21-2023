@@ -1,37 +1,77 @@
-#define сись std::cin >>
-#define сас std::cout <<
-#define сус int
-#define дыдля for
-#define шишь std::string
-#define ясель if
-#define сълово char
-#include <iostream> 
+помогите сделать переходы в меню или подскажите как это сделать (нужно что бы при "choise 2" скрывалась меню и открывались правила) 
+#include<iostream>
 #include<string>
-#include<ctime>
+#include <windows.h>
+#include <iomanip>
+#include <conio.h>
 
- int main()
-{
-	 system("chcp 1251");
-	 srand(int(time(0)));
-	 сус size = 0;
-	 сас "введите размер массива: ";
-	 сись size;
-	 сус *arr = new сус[size];
-	 for (сус i = 0; i < size; i++)
-	 {
-		 arr[i] = rand() % 101 - 50;
-		 сас arr[i] << " ";
-	 }
-	 сас std::endl;
-	 сус max = 0;
-	 for (сус i = 0; i < size; i++)
-	 { 
-		 sum = arr[i] + arr[i + 1];
-		 if (arr[i]>max)
-		 {
-			 max = sum;
-		 }
-	 }
-	 сас max;
-	return 0;
+int main() {
+    system("chcp 1251");
+
+    system("cls");
+
+    bool isBlinking = true;
+
+    do {
+        if (isBlinking) {
+
+            std::cout << std::setw(500) << "ПАМЯТЬ" << std::endl;
+            std::cout << std::setw(40) << "нажмите[Enter] для продолжения" << std::endl;
+        }
+        else {
+            std::cout << std::setw(500) << "        " << std::endl;
+        }
+        isBlinking = !isBlinking;
+        Sleep(1000);
+        system("cls");
+
+    } while (!_kbhit() || _getch() != 13);
+
+    system("cls");
+    int choice = 1;
+    while (true) {
+
+        system("cls");
+        if (choice == 1) std::cout << "->";
+        std::cout << "<Играть!>" << std::endl;
+
+        if (choice == 2) std::cout << "->";
+        std::cout << "<правила игры>" << std::endl;
+
+        if (choice == 3) std::cout << "->";
+        std::cout << "<Выход>" << std::endl;
+
+
+    int key = _getch();
+
+    if (key == 224) {
+        key = _getch();
+
+    switch (key) {
+            case 72:
+                choice = max(1, choice - 1);
+                break;
+
+            case 80:
+                choice = min(3, choice + 1);
+                break;
+            }
+        }
+        else if (key == 13) {
+            if (choice == 3) break;
+        }
+    }
+    switch (choice)
+    {
+    case 1:{
+        break;
+    }
+    case 2: {
+        std::cout << "hi";
+        break;
+    }
+    default:
+        break;
+    }
+    return 0;
 }
