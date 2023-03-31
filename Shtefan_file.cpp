@@ -28,9 +28,8 @@ int main() {
     } while (!_kbhit() || _getch() != 13);
 
     system("cls");
-    int choice = 1;
+   int choice = 1, choose = 1, kye=_getch();
     while (true) {
-
         system("cls");
         if (choice == 1) std::cout << "->";
         std::cout << "<Играть!>" << std::endl;
@@ -41,13 +40,12 @@ int main() {
         if (choice == 3) std::cout << "->";
         std::cout << "<Выход>" << std::endl;
 
+        int key = _getch();
 
-    int key = _getch();
+        if (key == 224) {
+            key = _getch();
 
-    if (key == 224) {
-        key = _getch();
-
-    switch (key) {
+            switch (key) {
             case 72:
                 choice = max(1, choice - 1);
                 break;
@@ -57,14 +55,12 @@ int main() {
                 break;
             }
         }
-        else if (key == 13) {
-            if (choice == 3) break;
-        }
-    }
     if (choice == 1 && kye == 13)choose = 1;
     if (choice == 2 && kye == 13)choose = 2;
     if (choice == 3 && kye == 13)choose = 3;
-  
+        else if (key == 13) {
+            if (choice == 3) break;
+           
     switch (choose)
     {
     case 1: {
@@ -82,5 +78,8 @@ int main() {
     default:
         break;
     }
+        }
+    }
+  
     return 0;
 }
